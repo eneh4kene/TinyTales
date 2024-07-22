@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Library</h1>
+    <a href="{{ url_for('add_author') }}">Add Author</a>
+    <a href="{{ url_for('add_book') }}">Add Book</a>
+    <h2>Books</h2>
+
+    <!-- Search Form -->
+    <form method="get" action="{{ url_for('home') }}">
+        <input type="text" name="search" placeholder="Search for a book">
+        <button type="submit">Search</button>
+    </form>
+
+    <form method="get" action="{{ url_for('home') }}">
+        <label for="sort">Sort by:</label>
+        <select name="sort" id="sort" onchange="this.form.submit()">
+            <option value="title" {% if request.args.get('sort') == 'title' %}selected{% endif %}>Title</option>
+            <option value="author" {% if request.args.get('sort') == 'author' %}selected{% endif %}>Author</option>
+        </select>
+    </form>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book.title }} by {{ book.author.name }}
+                <!-- Delete Book Form -->
+                <form method="post" action="{{ url_for('delete_book', book_id=book.id) }}" style="display:inline;">
+                    <button type="submit">Delete Book</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if not books %}
+        <p>No books match your search criteria.</p>
+    {% endif %}
+</body>
+</html>
