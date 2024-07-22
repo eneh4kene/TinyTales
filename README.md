@@ -15,7 +15,7 @@ TinyTales is an initiative to encourage young children to become future authors 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/tinytales.git
+    git clone https://github.com/eneh4kene/tinytales.git
     cd tinytales
     ```
 
