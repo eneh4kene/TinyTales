@@ -1,4 +1,3 @@
-```markdown
 # TinyTales
 
 TinyTales is an initiative to encourage young children to become future authors by providing them a platform to write, share, and showcase their stories. This web application allows children to create their own books, view books written by others, and engage in the joy of storytelling.
@@ -85,5 +84,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Thanks to the Flask community for their amazing support and resources.
 - Inspired by the need to foster creativity and literacy among young children.
-
-```
